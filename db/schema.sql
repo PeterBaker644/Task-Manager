@@ -1,0 +1,13 @@
+DROP DATABASE IF EXISTS task_db;
+
+CREATE DATABASE task_db;
+USE task_db;
+
+CREATE TABLE tasks
+(
+	id int NOT NULL AUTO_INCREMENT,
+	body varchar(4096) NOT NULL,
+    completed BOOLEAN DEFAULT FALSE,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (id)
+);

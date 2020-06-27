@@ -1,0 +1,22 @@
+Files to complete:
+=====================
+
+Back End
+---------
+connection - done
+orm - done
+
+tasks controller - next (make sure to pass in obj where necessary)
+
+schema - done
+seeds - done
+
+server.js - done
+
+Front End
+---------
+assets
+tasks.js
+views
+index.handlebars
+main.handlebars
