@@ -9,7 +9,6 @@ const router = express.Router();
 // Import the model (task.js) to use its database functions.
 const task = require("../models/task.js");
 
-// Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
     task.all(function (data) {
         const hbsObject = {
@@ -21,8 +20,7 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/tasks", function (req, res) {
-    task.create(["body"], [req.body.body], function (result) {
-        // Send back the ID of the new task
+    task.create("body", req.body.body, function (result) {
         res.json({ id: result.insertId });
     });
 });
@@ -47,7 +45,7 @@ router.put("/api/tasks/:id", function (req, res) {
 router.delete("/api/tasks/:id", function (req, res) {
     const condition = "id = " + req.params.id;
 
-    console.log("condition:", condition);
+    console.log(`Task deleted. Id = ${req.params.id}`);
 
     task.delete(
         condition,
@@ -57,5 +55,4 @@ router.delete("/api/tasks/:id", function (req, res) {
     )
 })
 
-// Export routes for server.js to use.
 module.exports = router;

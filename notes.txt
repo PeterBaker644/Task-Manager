@@ -6,7 +6,8 @@ Back End
 connection - done
 orm - done
 
-tasks controller - next (make sure to pass in obj where necessary)
+tasks controller - done
+task.js - done
 
 schema - done
 seeds - done
@@ -18,5 +19,5 @@ Front End
 assets
 tasks.js
 views
-index.handlebars
+index.handlebars - this one next. Should be easy.
 main.handlebars
