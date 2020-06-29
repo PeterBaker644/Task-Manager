@@ -6,7 +6,7 @@
 
     <main class="card">
         <div class="row no-gutters">
-            <div class="col-lg-9 col-xl-8 border-right">
+            <div class="col-lg-7 col-xl-8 border-right">
                 <div class="card-body">
                     <h3 class="card-title">New Task</h3>
                     <hr>
@@ -34,7 +34,11 @@
             </div>
             <div class="col-lg side ">
                 <div class="card-body">
-                    <h3 class="card-title" id="new-note">Completed Tasks</h3>
+                    <div class="card-title h3 d-flex justify-content-between">Completed Tasks
+                        <button class="btn btn-outline-secondary p-1 clear-all">
+                            Clear All
+                        </button>
+                    </div>
                     <hr>
                     <ul class="list-group list-group-flush" id="completed-list">
                         {{#each tasks}}

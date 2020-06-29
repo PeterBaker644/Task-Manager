@@ -42,6 +42,17 @@ $(document).ready(function () {
         }
     });
 
+    $(".clear-all").on("click", function (event) {
+        $.ajax("/api/tasks/clear", {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("Tasks cleared");
+                location.reload();
+            }
+        )
+    })
+
     $(".delete").on("click", function (event) {
         let id = $(this).data("id");
 

@@ -39,6 +39,19 @@ router.put("/api/tasks/:id", function (req, res) {
     ); 
 });
 
+router.delete("/api/tasks/clear", function (req, res) {
+    const condition = "completed = true";
+
+    console.log(`Completed tasks have been cleared`);
+
+    task.delete(
+        condition,
+        function (result) {
+            res.status(200).end();
+        }
+    )
+})
+
 router.delete("/api/tasks/:id", function (req, res) {
     const condition = "id = " + req.params.id;
 
