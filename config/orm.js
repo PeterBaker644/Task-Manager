@@ -9,7 +9,7 @@ const orm = {
         });
     },
     insertOne: function (table, col, val, cb) {
-        let queryString = "INSERT INTO ?? (??) VALUES ?";
+        let queryString = "INSERT INTO ?? (??) VALUES (?)";
 
         connection.query(
             queryString,
@@ -19,13 +19,15 @@ const orm = {
                 cb(result);
             });
     },
-    updateOne: function (table, objColVal, condition, cb) {
-        let queryString = "UPDATE ?? SET ?? WHERE "
-        queryString += condition;
+    updateOne: function (table, condition1, condition2, cb) {
+        let queryString = "UPDATE ?? SET ";
+        queryString += condition1;
+        queryString += " WHERE ";
+        queryString += condition2;
 
-        condition.query(
+        connection.query(
             queryString,
-            [table, objColVal],
+            [table],
             function (err, result) {
                 if (err) throw err;
                 cb(result);
@@ -47,3 +49,5 @@ const orm = {
         });
     }
 }
+
+module.exports = orm;

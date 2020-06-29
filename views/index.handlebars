@@ -1,38 +1,51 @@
-<h1>Cats!</h1>
+<div class="container">
 
-<h2>Cats that are not sleepy!</h2>
+    <header class="jumbotron bg-primary mt-4 p-4">
+        <h1 class="display-3 text-center text-white">Task Manager</h1>
+    </header>
 
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+    <main class="card">
+        <div class="row no-gutters">
+            <div class="col-lg-9 col-xl-8 border-right">
+                <div class="card-body">
+                    <h3 class="card-title">New Task</h3>
+                    <hr>
+                    <form>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="New Task..." id="task-body"
+                                    aria-label="New Task...">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-primary add-task" type="submit" id="submit">Add
+                                        Task</button>
+                                </div>
+                                <div class="invalid-feedback">Field cannot be left blank.</div>
+                            </div>
+                        </div>
+                    </form>
+                    <ul class="list-group">
+                        {{#each tasks}}
+                            {{#unless completed}}
+                                {{> tasks/task-item}}
+                            {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg side ">
+                <div class="card-body">
+                    <h3 class="card-title" id="new-note">Completed Tasks</h3>
+                    <hr>
+                    <ul class="list-group list-group-flush" id="completed-list">
+                        {{#each tasks}}
+                            {{#if completed}}
+                                {{> tasks/task-complete}}
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
 
-<h2>Cats that are sleepy!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Cat</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Cat Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
-
-  <button type="submit">Add Cat</button>
-</form>
+</div>

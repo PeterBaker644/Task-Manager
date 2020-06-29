@@ -10,13 +10,13 @@ var task = {
             cb(res);
         });
     },
-    create: function (col, val, cb) {
-        orm.insertOne("tasks", col, val, function (res) {
+    create: function (val, cb) {
+        orm.insertOne("tasks", "body", val, function (res) {
             cb(res);
         });
     },
-    update: function (objColVal, condition, cb) {
-        orm.updateOne("tasks", objColVal, condition, function (res) {
+    update: function (condition, cb) {
+        orm.updateOne("tasks", 'completed = true', condition, function (res) {
             cb(res);
         });
     },

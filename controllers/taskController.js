@@ -20,7 +20,7 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/tasks", function (req, res) {
-    task.create("body", req.body.body, function (result) {
+    task.create(req.body.body, function (result) {
         res.json({ id: result.insertId });
     });
 });
@@ -31,15 +31,12 @@ router.put("/api/tasks/:id", function (req, res) {
     console.log(`Task complete. Id = ${req.params.id}`);
 
     task.update(
-        {
-            complete: req.body.complete
-        },
         condition,
         function (result) {
             // Send back the ID of the updated task
             res.json({ id: result.insertId });
         }
-    );
+    ); 
 });
 
 router.delete("/api/tasks/:id", function (req, res) {
