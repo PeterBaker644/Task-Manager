@@ -22,3 +22,4 @@ Please note that this project is released with a Contributor Code of Conduct. By
 
 ## Screenshots
 
+![Screenshot of the webpage](https://raw.githubusercontent.com/PeterBaker644/Task-Manager/master/screenshots/screenshot-1.png)
