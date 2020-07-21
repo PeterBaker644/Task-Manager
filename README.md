@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/PeterBaker644/Task-Manager)](https://github.com/PeterBaker644/Task-Manager/blob/master/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md)
 
-An example task manager web application using MVC framework. The backend features a custom ORM implementation and does not use sequelize.
+An example task manager web application using MVC framework. The backend is built on Express and JAWSDB and features a custom MySQL ORM implementation that does not use sequelize.
 
 ## Usage
 
